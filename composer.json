@@ -1,0 +1,24 @@
+{
+    "name": "gabriele.cappello/untitled",
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+
+    "authors": [
+        {
+            "name": "gcappello-bg",
+            "email": "gabriele.cappello@brokergenius.com"
+        }
+    ],
+    "autoload": {
+
+        "psr-4": {
+            "CodingDojo\\StringCalculator\\": "StringCalculator/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodingDojo\\StringCalculator\\tests\\": "StringCalculator/tests"
+        }
+    }
+}
