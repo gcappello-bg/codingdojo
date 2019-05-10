@@ -24,17 +24,32 @@ class StringCalculatorTest extends TestCase
 
     public function testAddNumberOne(): void
     {
-        $this->assertEquals(1, $this->stringCalculator->add('1'));
+        $number = rand(0,9999);
+        $this->assertEquals($number, $this->stringCalculator->add($number));
     }
 
     public function testAddNumberOneAndNumberTwo(): void
     {
-        $this->assertEquals(3, $this->stringCalculator->add('1,2'));
+        $numberOne = rand(0,9999);
+        $numberTwo = rand(0,9999);
+        $this->assertEquals($numberOne + $numberTwo, $this->stringCalculator->add(
+            $numberOne . ',' . $numberTwo
+        ));
     }
     public function testAddUnknownAmountOfNumbers(): void
     {
         $this->assertEquals(3, $this->stringCalculator->add('1,1,1'));
         $this->assertEquals(4, $this->stringCalculator->add('2,1,1'));
         $this->assertEquals(5, $this->stringCalculator->add('2,2,1'));
+    }
+
+    public function testAddNumberOneAndNumberTwoWithSpaces(): void
+    {
+        $this->fail('Needs refactoring.');
+        $numberOne = rand(0,9999);
+        $numberTwo = rand(0,9999);
+        $this->assertEquals($numberOne + $numberTwo, $this->stringCalculator->add(
+            $numberOne . "\n" . $numberTwo
+        ));
     }
 }

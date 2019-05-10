@@ -10,14 +10,9 @@ class StringCalculator
      */
     public function add(string $numbers): int
     {
-        if ()
-        if($numbers == '1,2'){
-            return 3;
+        if (strpos($numbers, "\n")) {
+            return array_sum(explode("\n", $numbers));
         }
-        if (!empty($numbers)) {
-            return 1;
-        }
-
-        return 0;
+        return array_sum(explode(',', $numbers));
     }
 }
