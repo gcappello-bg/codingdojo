@@ -45,11 +45,18 @@ class StringCalculatorTest extends TestCase
 
     public function testAddNumberOneAndNumberTwoWithSpaces(): void
     {
-        $this->fail('Needs refactoring.');
         $numberOne = rand(0,9999);
         $numberTwo = rand(0,9999);
-        $this->assertEquals($numberOne + $numberTwo, $this->stringCalculator->add(
-            $numberOne . "\n" . $numberTwo
-        ));
+        $this->assertEquals(
+            $numberOne + $numberTwo,
+            $this->stringCalculator->add($numberOne . "\n" . $numberTwo)
+        );
     }
+
+    public function testVariableDelimiters()
+    {
+        $this->assertEquals(3, $this->stringCalculator->add("//;\n1;2"));
+    }
+
+
 }
